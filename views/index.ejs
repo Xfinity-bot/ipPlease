@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get your public IP address and info">
+  
+        <meta name="author" content="Xfinity">
+    <meta name="keywords" content="ip, whatsmyip, ip address,public ip address,my ip">
+    <title>ipPlease</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/801054654174855169/953683696345575424/Group-1-_2_.ico">
+   
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+}
+body{
+    background-color: #1D1D1D;
+  }
+.box-container{
+    background: linear-gradient(to bottom, #FCB54E, #F745B5); 
+    
+    width:40vw;
+    height: 60vh;
+    margin:10vh auto;
+    padding: 10px;
+    border-radius: 20px;
+    
+   
+    
+}.content-box{
+    background-color: #1D1D1D;
+   
+    width:100%;
+    height: 100%;
+   
+    border-radius: 15px;
+    color: rgb(255, 233, 200);
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    flex-direction: column;
+    align-items: center;
+    
+}
+p{
+    color: #949494;
+}
+.main-row,.country-row,.timezone-row{
+    
+    
+    border:none;
+    
+    display: flex;
+    padding: 0 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-row{
+    width: 95%;
+    height:30%;
+    border-bottom: 2px solid #FCB54E ;
+    margin-bottom: 3%;
+}
+.country-row {
+    width: 85%;
+    height:15%;
+    border-bottom: 1px solid #3f3f3f ;
+}
+.country-row img{
+    width: 40px;
+}
+.main-row h2{
+    font-weight: 800;
+    font-size: calc(1.25em+3vw);
+}
+.main-row p{
+    font-weight: 600 ;
+    font-size: calc(1em+3vw);
+    
+}
+.region-row{
+    width: 85%;
+    height:15%;
+    padding:0;
+    border-bottom: 1px solid #3f3f3f ;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    
+}
+.region-row .state{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+}
+.region-row .city{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+}
+.timezone-row{
+
+    width: 85%;
+    height:15%;
+    
+}
+@media only screen and (max-width:960px) {
+  .box-container{
+    width:70vw;
+    height: 60vh;
+  }
+}
+@media only screen and (max-width:720px) {
+  .box-container{
+    width:85vw;
+    height: 60vh;
+  }}
+  @media only screen and (max-width:640px) {
+  .box-container{
+    width:95vw;
+    height: 60vh;
+  }
+}
+</style>
+<body>
+    <div class="box-container">
+        <div class="content-box">
+            <div class="main-row">
+                <h2 >IP Address</h2>
+                <p><%= ip %></p>
+            </div>
+            <div class="country-row">
+                <h3>Country</h3>
+                <p> <%= country.country %></p>
+                <img src=" <%= flaglink %>"/>
+            </div>
+            <div class="region-row">
+                <div class="state"><h3>State</h3><p><%= geo.region %></p></div>
+                
+                <div class="city"><h3>City</h3>
+                    <p><%= geo.city %></p></div>
+                
+            </div>
+            <div class="timezone-row">
+                <h3>Timezone</h3>
+                <p><%= geo.timezone %></p>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
